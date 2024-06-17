@@ -32,7 +32,10 @@ export const Game = () => {
   })
 
   return (
+    <>
+    <h1>Tic-Tac-Toe</h1>
     <div className="game">
+        
       <div className="game-board">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
@@ -40,5 +43,6 @@ export const Game = () => {
         <ol>{moves}</ol>
       </div>
     </div>
+    </>
   );
 };

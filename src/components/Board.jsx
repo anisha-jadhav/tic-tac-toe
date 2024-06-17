@@ -29,8 +29,6 @@ export const Board = ({xIsNext, squares, onPlay}) => {
    return null;
   }
   
-  
-
  const winner = calculateWinner(squares);
  let status;
  if(winner){

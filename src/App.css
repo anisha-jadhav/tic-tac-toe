@@ -1,19 +1,144 @@
-*{
+/* General styling for the app */
+* {
+  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width and height */
   background: rgb(196, 107, 250);
   margin: 0;
 }
 
-body{
-  margin:10rem;
-  padding: 5rem;
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(196, 107, 250);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
+h1{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: bold;
+}
 
-.square{
-  margin: 0.02px;
-  padding: 2rem;
-  border-color: black;
-  border-width: 1px;
-  align-items: center;
+.status{
+  text-decoration: solid;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Styling for the board */
+.board {
+  display: inline-block; /* Added to prevent the board from stretching out */
+  margin: 20px;
+  width: 182px; /* 3 * 60px + 2 * 1px border - updated to match the total width of the board */
+  height: 182px; /* 3 * 60px + 2 * 1px border - updated to match the total height of the board */
+}
+
+.board-row {
+  display: flex;
+}
+
+/* Styling for individual squares */
+.square {
+  background: rgb(196, 107, 250);
+  border: 1px solid #360448;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 60px;
+  height: 60px;
+  width: 60px;
+  margin: 0; /* Removed margin adjustments to prevent shifting */
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.square:hover {
+  background-color: #ddd;
+}
+
+/* Styling for the game container */
+.game {
+  display: flex;
+  flex-direction: row;
+  background-color: #3a0467; /* Red background color */
+  padding: 100px; /* Good padding around the game component */
+  border-radius: 10px; /* Optional: Adding rounded corners for a better look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adding a shadow for a better look */
+}
+
+.game-board {
+  margin-right: 20px;
+  padding: 50px;
+  border-radius: 10px;
+  
+}
+
+.game-info {
+  margin-left: 20px;
+  border-radius: 10px;
+  padding : 20px;
+}
+
+.game-info ol,
+.game-info ul {
+  padding-left: 20px;
+}
+
+.game-info button {
+  background-color: #fff;
+  border: 1px solid #999;
+  padding: 5px 10px;
+  border-radius: 7px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.game-info button:hover {
+  background-color: #ddd;
+}
+
+.game-info button:focus {
+  outline: none;
+  background-color: #ddd;
+}
+
+/* Add some responsiveness */
+@media (max-width: 600px) {
+  .square {
+    font-size: 24px;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+  }
+
+  .status {
+    font-size: 18px;
+  }
+
+  .game {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-board {
+    margin-right: 0;
+  }
+
+  .game-info {
+    margin-left: 0;
+    margin-top: 20px;
+  }
 }
